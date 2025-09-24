@@ -1,0 +1,32 @@
+# Core
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+
+# ML
+xgboost
+prophet
+tensorflow
+torch
+
+# Dashboard
+streamlit
+plotly
+
+# MLOps
+mlflow
+evidently
+apache-airflow
+boto3
+dvc
+pydantic
+
+# DevOps
+docker
+python-dotenv
+
+# Optional
+jupyter
+ipython
