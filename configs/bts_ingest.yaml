@@ -1,0 +1,28 @@
+# configs/bts_ingest.yaml
+# Configuration for BTS On-Time Performance batch downloader
+
+bts:
+  # Template used to construct monthly download URLs.
+  # This pattern historically works for monthly BTS zip files.
+  # Example resolved URL for Jan 2011:
+  # https://www.transtats.bts.gov/Download/On_Time_On_Time_Performance_2011_1.zip
+  # NOTE: If the official TranStats UI changes, use the TranStats download page to build the URL or download manually.
+  url_template: "https://www.transtats.bts.gov/Download/On_Time_On_Time_Performance_{year}_{month}.zip"
+
+  # Years to download. You can set a single year or a range (list).
+  years: [2019, 2020, 2021]
+
+  # Months to download for each year (1..12). Use [1,2,3] or range-like list.
+  months: [1,2,3,4,5,6,7,8,9,10,11,12]
+
+  # If you prefer to download only recent months, adjust years/months accordingly.
+
+storage:
+  # Where to save the extracted CSVs locally
+  local_raw_dir: "data/raw/bts"
+  # file naming template for extracted CSVs
+  output_filename_template: "on_time_{year}_{month:02d}.csv"
+
+logging:
+  # small writable file to append download logs
+  log_file: "logs/bts_ingest.log"
